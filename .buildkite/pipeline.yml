@@ -1,5 +1,4 @@
 cache:
-  name: "Next.js cache"
   paths:
     - ".nextjs/cache"
 

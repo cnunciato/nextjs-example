@@ -1,21 +1,31 @@
-# cache:
-#   paths:
-#     - .nextjs/cache
-#     - node_modules
+cache:
+  name: "Next.js cache"
+  paths:
+    - ".nextjs/cache"
 
 steps:
-  - label: ":lint-roller: Lint"
+  - label: ":lint: Lint"
     command: |
+
+      echo "--- Before build"
+      du -sh .next/cache || echo "No cache directory found"
+
+      echo "--- Install and build"
       npm install
       npm run lint
-    cache:
-      - .nextjs/cache
-      - node_modules
 
-  - label: ":hammer: Build"
+      echo "--- After build"
+      du -sh .next/cache || echo "No cache directory found"
+
+  - label: ":wrench: Build"
     command: |
-      npm install
+
+      echo "--- Before build"
+      du -sh .next/cache || echo "No cache directory found"
+
+      echo "--- Install and build"
       npm run build
-    cache:
-      - .nextjs/cache
-      - node_modules
+      npm run build
+
+      echo "--- After build"
+      du -sh .next/cache || echo "No cache directory found"

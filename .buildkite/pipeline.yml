@@ -1,0 +1,15 @@
+cache:
+  paths:
+    - .nextjs/cache
+    - node_modules
+
+steps:
+  - label: ":lint-roller: Lint"
+    command: |
+      npm install
+      npm run lint
+
+  - label: ":hammer: Build"
+    command: |
+      npm install
+      npm run build

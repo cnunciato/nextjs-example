@@ -1,6 +1,7 @@
 cache:
   paths:
-    - ".next/cache"
+    - .next/cache
+    - node_modules
 
 steps:
   - label: ":lint: Lint"

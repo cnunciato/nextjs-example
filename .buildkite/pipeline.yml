@@ -4,28 +4,12 @@ cache:
     - node_modules
 
 steps:
-  - label: ":lint: Lint"
+  - label: ":lint-roller: Lint"
     command: |
-
-      echo "--- Before build"
-      du -sh .next/cache || echo "No cache directory found"
-
-      echo "--- Install and build"
       npm install
       npm run lint
 
-      echo "--- After build"
-      du -sh .next/cache || echo "No cache directory found"
-
-  - label: ":wrench: Build"
+  - label: ":hammer: Build"
     command: |
-
-      echo "--- Before build"
-      du -sh .next/cache || echo "No cache directory found"
-
-      echo "--- Install and build"
       npm install
       npm run build
-
-      echo "--- After build"
-      du -sh .next/cache || echo "No cache directory found"

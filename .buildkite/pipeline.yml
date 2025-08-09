@@ -23,7 +23,7 @@ steps:
       du -sh .next/cache || echo "No cache directory found"
 
       echo "--- Install and build"
-      npm run build
+      npm install
       npm run build
 
       echo "--- After build"

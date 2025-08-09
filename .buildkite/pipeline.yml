@@ -1,6 +1,6 @@
 cache:
   paths:
-    - ".nextjs/cache"
+    - ".next/cache"
 
 steps:
   - label: ":lint: Lint"
